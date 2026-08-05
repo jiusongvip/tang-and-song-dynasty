@@ -1,0 +1,11 @@
+{
+  "name": "tang-and-song-dynasty",
+  "private": true,
+  "scripts": {
+    "build": "python build.py",
+    "dev": "pnpm build && serve . --no-clipboard"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.0"
+  }
+}

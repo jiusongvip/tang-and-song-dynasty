@@ -1,0 +1,71 @@
+<section id="checker" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+  <h2 class="display text-3xl md:text-4xl mb-2">Authenticity Checker</h2>
+  <p class="text-stone text-lg max-w-2xl mb-8 leading-relaxed">Type the name of a Chinese historical site. We will tell you if it is an original structure, a later rebuild, an archaeological ruin, or a modern theme park.</p>
+  <div class="max-w-xl">
+    <div class="flex gap-2 mb-6">
+      <input type="text" id="chk-in" placeholder="e.g. Foguang Temple, Tang Paradise..." class="flex-1 px-4 py-2.5 border border-rule rounded bg-surface text-ink placeholder:text-stone text-sm focus:outline-none focus:border-vermillion transition">
+      <button onclick="checkSite()" class="px-6 py-2.5 bg-vermillion text-white text-sm font-medium rounded hover:bg-accent-hover transition whitespace-nowrap">Check</button>
+    </div>
+    <div id="chk-out" class="chk-res border border-rule rounded p-5 bg-surface"></div>
+  </div>
+  <canvas id="share-canvas" style="display:none"></canvas>
+</section>
+<script>
+var db = __SITES_JSON__;
+var tags = __TAGS_JSON__;
+var currentResult = null;
+function checkSite() {
+  var q = document.getElementById('chk-in').value.trim().toLowerCase();
+  var out = document.getElementById('chk-out');
+  if (!q) { out.classList.remove('on'); return; }
+  for (var i = 0; i < db.length; i++) {
+    var s = db[i];
+    if (s.name.toLowerCase().indexOf(q) >= 0 || s.zh.toLowerCase().indexOf(q) >= 0) {
+      var t = tags[s.tag];
+      currentResult = { name: s.name, year: s.year, honest: s.honest, basis: s.basis, city: s.city, province: s.province, tag: t };
+      out.classList.add('on');
+      out.innerHTML = '<div class="flex items-center justify-between gap-3 mb-3"><div class="flex items-center gap-2"><span class="tag-dot ' + t.css + '"></span><span class="font-medium text-lg display">' + t.label + '</span></div></div><p class="text-sm text-ink leading-relaxed mb-2"><strong>' + s.name + '</strong> (' + s.year + ')</p><p class="text-sm text-stone leading-relaxed mb-2">' + s.honest + '</p><p class="text-xs text-stone font-mono mb-3">Basis: ' + s.basis + ' | ' + s.city + ', ' + s.province + '</p><div class="flex gap-2"><button onclick="shareCard()" class="inline-flex items-center gap-1.5 px-3 py-1.5 border border-rule rounded text-xs text-stone hover:text-vermillion hover:border-vermillion transition cursor-pointer"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>Download share card</button></div>';
+      return;
+    }
+  }
+  currentResult = null;
+  out.classList.add('on');
+  out.innerHTML = '<p class="text-stone">No match found. Try "Foguang Temple", "Tang Paradise", or "Iron Pagoda". We currently have ' + db.length + ' sites in the database.</p>';
+}
+document.getElementById('chk-in').addEventListener('keydown', function(e) { if (e.key === "Enter") checkSite(); });
+function shareCard() {
+  if (!currentResult) return;
+  var r = currentResult;
+  var canvas = document.getElementById('share-canvas');
+  var w = 600, h = 360;
+  canvas.width = w; canvas.height = h;
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#fafaf7'; ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = '#b91c1c'; ctx.fillRect(0, 0, w, 3);
+  var tc = {'tag-green':'#166534','tag-yellow':'#ca8a04','tag-orange':'#ea580c','tag-red':'#dc2626'};
+  ctx.beginPath(); ctx.arc(30, 50, 7, 0, Math.PI*2); ctx.fillStyle = tc[r.tag.css] || '#166534'; ctx.fill();
+  ctx.font = 'bold 11px sans-serif'; ctx.fillStyle = '#57534e';
+  ctx.fillText(r.tag.label.toUpperCase(), 46, 54);
+  ctx.font = 'bold 26px Georgia, serif'; ctx.fillStyle = '#1a1714';
+  ctx.fillText(r.name, 30, 96);
+  ctx.font = '13px monospace'; ctx.fillStyle = '#78716c';
+  ctx.fillText('Built ' + r.year + '  \u00b7  ' + r.city + ', ' + r.province, 30, 120);
+  ctx.font = '14px sans-serif'; ctx.fillStyle = '#44403c';
+  var words = r.honest.split(' '), line = '', y = 155, maxW = 540;
+  for (var j = 0; j < words.length; j++) {
+    var test = line + words[j] + ' ';
+    if (ctx.measureText(test).width > maxW && line) { ctx.fillText(line.trim(), 30, y); line = words[j] + ' '; y += 22; }
+    else { line = test; }
+  }
+  ctx.fillText(line.trim(), 30, y);
+  ctx.font = '11px monospace'; ctx.fillStyle = '#a8a29e';
+  ctx.fillText('Basis: ' + r.basis, 30, y + 32);
+  ctx.fillStyle = '#d6d3d1'; ctx.fillRect(0, h-32, w, 1);
+  ctx.font = '11px monospace'; ctx.fillStyle = '#78716c';
+  ctx.fillText('Relics Guide \u00b7 tang-and-song-dynasty.com', 30, h-11);
+  var link = document.createElement('a');
+  link.download = r.name.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() + '-authenticity.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+</script>

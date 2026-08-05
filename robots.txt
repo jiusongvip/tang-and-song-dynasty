@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tang-and-song-dynasty.com/sitemap.xml

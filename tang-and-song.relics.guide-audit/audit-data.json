@@ -1,0 +1,319 @@
+{
+  "summary": {
+    "health_score": 71,
+    "business_type": "Travel Guide / Historical Content (Information site targeting US English audience)",
+    "top_findings": [
+      "Schema JSON-LD broken on all 18 detail pages due to {{}} escaping bug",
+      "Tailwind CDN script in <head> blocks first paint and adds 1-3s to LCP",
+      "No og:image or twitter:image on any page -- social previews invisible",
+      "18 images total 3.8 MB with no responsive srcset",
+      "No llms.txt for AI crawler discoverability"
+    ],
+    "quick_wins": [
+      "Fix schema JSON-LD escape bug across all detail pages (1-2 hours, one build pipeline fix)",
+      "Add og:image / twitter:image to every page (1 hour, one tag per page)",
+      "Add responsive srcset and width/height to all images (3-4 hours)",
+      "Recompress images with cwebp -q 75 to reduce payload ~50% (1 hour)",
+      "Create llms.txt at site root (30 minutes)"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 62,
+      "what_works": [
+        "Clean robots.txt with sitemap reference",
+        "Sitemap.xml covers all 19 pages with proper lastmod",
+        "Canonical URLs correct on all pages",
+        "Meta robots index,follow on every page",
+        "No broken internal links detected"
+      ],
+      "findings": [
+        {
+          "title": "Schema JSON-LD broken on all 18 detail pages",
+          "severity": "Critical",
+          "description": "Every detail page uses {{ and }} as JSON delimiters in schema LD+JSON blocks. This renders structured data unparseable by Google. Only the homepage schema is correct. File: sites/foguang/index.html line ~21 and all siblings.",
+          "recommendation": "Fix build pipeline so { and } are not escaped. Rebuild all 18 detail pages. Validate with Google Rich Results Test."
+        },
+        {
+          "title": "No security headers configured",
+          "severity": "High",
+          "description": "No CSP, HSTS, X-Content-Type-Options, or X-Frame-Options headers visible in source. Server config not present in repo.",
+          "recommendation": "Add HSTS max-age=31536000, X-Content-Type-Options: nosniff, X-Frame-Options: SAMEORIGIN via server config."
+        },
+        {
+          "title": "Sitemap changefreq and priority provide no value",
+          "severity": "Medium",
+          "description": "All entries use changefreq=monthly and identical priority 0.8. Google primarily uses lastmod.",
+          "recommendation": "Keep lastmod, drop changefreq and priority from all entries except homepage."
+        },
+        {
+          "title": "Trailing slash inconsistency risk",
+          "severity": "Medium",
+          "description": "Sitemap uses trailing slashes. If server serves both with and without, duplicate content may emerge.",
+          "recommendation": "Verify server redirects non-trailing-slash URLs to trailing-slash versions."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 78,
+      "what_works": [
+        "Unique, keyword-rich title tags on all 19 pages",
+        "Unique meta descriptions on all pages",
+        "H1 on every page with clean heading hierarchy",
+        "OG and Twitter Card tags present on all pages",
+        "Strong internal linking with breadcrumbs and cross-references",
+        "Mobile-responsive navigation"
+      ],
+      "findings": [
+        {
+          "title": "Missing og:image on all pages",
+          "severity": "High",
+          "description": "No og:image or twitter:image meta tags on any of the 19 pages. Social shares (Twitter, Facebook, LinkedIn, Discord) show no preview image.",
+          "recommendation": "Add og:image pointing to each site hero image. Add og:image:width and og:image:height for faster social rendering."
+        },
+        {
+          "title": "Homepage title could be shorter",
+          "severity": "Low",
+          "description": "Current title is 82 chars. Google may truncate after 60-70 chars.",
+          "recommendation": "Consider shortening to Tang vs Song Dynasty: What Survives Today | Relics Guide (61 chars)."
+        },
+        {
+          "title": "Detail page meta descriptions are formulaic",
+          "severity": "Low",
+          "description": "All detail pages follow the same template: Complete travel guide to [Site] in [City], [Province]. Functional but does not entice clicks.",
+          "recommendation": "Lead each meta description with the most compelling fact about that specific site."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 85,
+      "what_works": [
+        "Authenticity label system (4-tier) is genuinely differentiating",
+        "Every site has Basis citation (NPU, UNESCO, State Council)",
+        "Honest note system builds E-E-A-T trust",
+        "Detail pages comprehensive: 6 travel sections each",
+        "FAQ section targets real search queries with substantive answers",
+        "No thin or duplicate pages",
+        "Chinese dynasty timeline with distinguishing facts"
+      ],
+      "findings": [
+        {
+          "title": "No author attribution or About page",
+          "severity": "Medium",
+          "description": "Organization schema used for authorship but no About page, author bio, or contact info. E-E-A-T signals benefit from transparent authorship.",
+          "recommendation": "Add /about/ page with organization details, editorial standards, and contact method."
+        },
+        {
+          "title": "Some Why Visit sections reuse homepage text",
+          "severity": "Low",
+          "description": "For Toshodai-ji and Horyu-ji, the Why Visit text is identical to the homepage card description.",
+          "recommendation": "Expand each Why Visit to 3-4 unique sentences."
+        },
+        {
+          "title": "No per-page content freshness signals",
+          "severity": "Low",
+          "description": "Footer says Facts verified: 2026-08 on all pages uniformly.",
+          "recommendation": "Add per-page dateModified in schema and a Last updated line in page footers."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 60,
+      "what_works": [
+        "Homepage: Article, FAQPage, Table, ItemList (TouristAttraction x18), BreadcrumbList",
+        "FAQPage with 13 Q&A pairs is excellent for AI Overviews",
+        "BreadcrumbList on all detail pages",
+        "TouristAttraction on all detail pages"
+      ],
+      "findings": [
+        {
+          "title": "All detail page schemas unparseable due to {{}} bug",
+          "severity": "Critical",
+          "description": "Double-brace escaping makes every schema block on 18 detail pages invalid JSON-LD. Google Rich Results Test fails.",
+          "recommendation": "Fix build pipeline. Same issue as Technical SEO finding #1."
+        },
+        {
+          "title": "Missing Organization schema",
+          "severity": "Medium",
+          "description": "No Organization or WebSite schema on homepage. Foundational schema type missing.",
+          "recommendation": "Add Organization schema with name Relics Guide and URL."
+        },
+        {
+          "title": "Missing ImageObject in TouristAttraction",
+          "severity": "Medium",
+          "description": "Each TouristAttraction should have an image property pointing to ImageObject with caption and dimensions.",
+          "recommendation": "Extend TouristAttraction schema to include image URLs with dimensions."
+        },
+        {
+          "title": "Table schema is minimal",
+          "severity": "Low",
+          "description": "Table schema on homepage has only an about field with no actual table data.",
+          "recommendation": "Populate with Tang vs Song comparison table data or remove."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 55,
+      "what_works": [
+        "Inline critical CSS avoids external stylesheet blocking",
+        "No analytics or tracking scripts",
+        "No advertising scripts",
+        "WebP format for all images",
+        "No heavy frameworks (React, Vue)",
+        "Static HTML -- fast server-side"
+      ],
+      "findings": [
+        {
+          "title": "Tailwind CDN script blocks first paint",
+          "severity": "Critical",
+          "description": "script src=https://cdn.tailwindcss.com loaded synchronously in head. Blocks HTML parsing until CDN script downloads, parses, and scans DOM. Adds 1-3s to FCP/LCP on slow connections.",
+          "recommendation": "Build Tailwind locally: npx tailwindcss -i input.css -o output.css --minify. Serve as static file."
+        },
+        {
+          "title": "Images oversized and not responsive (3.8 MB total)",
+          "severity": "High",
+          "description": "18 WebP images total 3.8 MB with no srcset. Largest: baoguo.webp (286 KB), famen.webp (272 KB).",
+          "recommendation": "Generate 400w/800w/1200w variants. Recompress with cwebp -q 75. Add srcset and sizes attributes."
+        },
+        {
+          "title": "Google Fonts add network dependency",
+          "severity": "High",
+          "description": "Three font families loaded from Google CDN. Even with preconnect, adds latency and blocks rendering.",
+          "recommendation": "Self-host font files with font-display: swap."
+        },
+        {
+          "title": "Inline CSS duplicated across 18 detail pages",
+          "severity": "Medium",
+          "description": "Each detail page has identical style block (~500 bytes). Not a major perf hit but is code duplication.",
+          "recommendation": "Extract into shared external stylesheet with cache-friendly headers."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 72,
+      "what_works": [
+        "All images in WebP format",
+        "All images have alt text",
+        "Proper aspect ratios via CSS classes",
+        "Consistent naming convention",
+        "No broken image references"
+      ],
+      "findings": [
+        {
+          "title": "No responsive image variants (srcset)",
+          "severity": "High",
+          "description": "Every img tag serves a single file. Mobile users on 3G download same 286 KB as desktop on fiber.",
+          "recommendation": "Generate 400w, 800w, 1200w variants and use srcset + sizes."
+        },
+        {
+          "title": "7 images over 250 KB",
+          "severity": "Medium",
+          "description": "baoguo.webp: 286 KB, famen.webp: 272 KB, mogao.webp: 269 KB, shosoin.webp: 266 KB, jinci.webp: 258 KB, huqiu.webp: 254 KB, daming.webp: 251 KB.",
+          "recommendation": "Recompress with cwebp -q 75. Target: all images under 150 KB."
+        },
+        {
+          "title": "Missing width and height attributes",
+          "severity": "Medium",
+          "description": "No img tags include width/height attributes. Causes Cumulative Layout Shift.",
+          "recommendation": "Add explicit dimensions matching natural aspect ratio."
+        },
+        {
+          "title": "Detail pages have no hero image",
+          "severity": "Low",
+          "description": "Detail pages are text-only above the fold. Image exists in images/ but not used.",
+          "recommendation": "Add hero img to each detail page header section above H1."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 68,
+      "what_works": [
+        "FAQPage schema well-structured for AI Overview extraction",
+        "BreadcrumbList helps AI crawlers understand hierarchy",
+        "Clear, definitional prose easy for AI models to cite",
+        "Substantive factual claims with specific data points",
+        "No paywalls or login gates"
+      ],
+      "findings": [
+        {
+          "title": "No llms.txt file",
+          "severity": "High",
+          "description": "llms.txt not present at site root. Primary discovery mechanism for LLM crawlers missing.",
+          "recommendation": "Create llms.txt listing key pages with brief descriptions."
+        },
+        {
+          "title": "No About page for brand authority signals",
+          "severity": "Medium",
+          "description": "AI models evaluate site authority partially based on About/Contact signals. Currently absent.",
+          "recommendation": "Add /about/ page with organization info and editorial policy."
+        },
+        {
+          "title": "No citation-friendly paragraph anchors",
+          "severity": "Medium",
+          "description": "Travel sections cannot be deep-linked at paragraph level.",
+          "recommendation": "Add id attributes to section headings for external deep-linking."
+        },
+        {
+          "title": "No analytics to measure AI traffic",
+          "severity": "Low",
+          "description": "No visibility into AI crawler referral patterns or traffic sources.",
+          "recommendation": "Add Plausible or Cloudflare Web Analytics (privacy-respecting, no cookies)."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Fix schema JSON-LD {{}} escape bug across all 18 detail pages",
+          "Add og:image and twitter:image to all 19 pages",
+          "Remove Tailwind CDN, build CSS locally and serve as static file"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Recompress images and add responsive srcset (3.8 MB -> ~2.0 MB target)",
+          "Create llms.txt for AI crawler discoverability",
+          "Add security headers (HSTS, X-Content-Type-Options, X-Frame-Options)",
+          "Extract shared inline CSS to external stylesheet"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Create /about/ and /contact/ pages",
+          "Add Organization + WebSite schema to homepage",
+          "Expand thin Why Visit sections for Japan/theme park sites",
+          "Add hero images to detail pages above H1"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Add privacy-respecting analytics (Plausible/Cloudflare)",
+          "Set up Google Search Console for indexation and performance monitoring",
+          "Sitemap cleanup: remove changefreq/priority, verify redirect consistency",
+          "Run Lighthouse audits post-optimization: target LCP < 2.5s, CLS < 0.1"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
