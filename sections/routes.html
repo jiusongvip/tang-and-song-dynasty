@@ -1,32 +1,143 @@
 <section id="routes" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
-  <h2 class="display text-3xl md:text-4xl mb-2">Plan Your Trip: Two Routes</h2>
-  <p class="text-stone text-lg max-w-2xl mb-8 leading-relaxed">Where to go, how to get there, and how to string the sites together. Both routes assume you can take high-speed trains and are comfortable with some long drives.</p>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    <div class="border border-rule rounded p-5 md:p-6 bg-surface">
-      <h3 class="display text-2xl mb-1">Tang Heritage Trail</h3>
-      <p class="text-xs text-stone font-mono mb-4">8-10 days &middot; Xi'an &rarr; Taiyuan &rarr; Xinzhou &rarr; Dunhuang</p>
-      <div class="space-y-3 text-sm">
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Days 1-3: Xi'an</p><p class="text-stone">Big Wild Goose Pagoda, Daming Palace, Shaanxi History Museum. Stay near Bell Tower. Book Shaanxi Museum 3+ days ahead on WeChat.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Day 3: Xi'an to Baoji (day trip)</p><p class="text-stone">Famen Temple Museum. 2 hrs by car or 1.5 hrs HSR + taxi. Return to Xi'an.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Day 4: Xi'an to Taiyuan</p><p class="text-stone">HSR Xi'an-Taiyuan (3.5 hrs). Afternoon: Jinci Temple. Stay in Taiyuan.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Days 5-6: Xinzhou mountain temples</p><p class="text-stone">Hire car+driver from Taiyuan (~600-800 CNY/day). 4 hr mountain road. Visit Foguang East Hall + Nanchan Temple in one day. Overnight in Doucun (basic guesthouse) or return to Taiyuan. No public transit.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Days 7-9: Dunhuang</p><p class="text-stone">Fly Taiyuan-Dunhuang or train via Lanzhou. Mogao Caves: book Standard Visit (8 caves, 238 CNY) 2+ weeks ahead on WeChat mini-program. Stay in Dunhuang city.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Day 10: Depart</p><p class="text-stone">Fly out from Dunhuang (DNH) or return to Xi'an.</p></div>
+  <p class="kicker flex items-center gap-3 text-gold text-[11px] font-mono uppercase mb-4"><span class="inline-block h-px w-8 bg-gold"></span>Itineraries · 行程规划</p>
+  <h2 class="display text-3xl md:text-[3.4rem] mb-3">Plan Your Trip: Two Routes</h2>
+  <p class="text-stone text-lg max-w-2xl mb-10 leading-relaxed">Where to go, how to get there, and how to string the sites together. Both routes assume you can take high-speed trains and are comfortable with some long drives.</p>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+    <div class="border border-rule rounded overflow-hidden bg-surface">
+      <div class="relative h-44 md:h-52">
+        <img src="images/foguang.webp" alt="Foguang Temple East Hall, the largest surviving Tang wooden structure in Shanxi, China" width="1200" height="800" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/5"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="display text-2xl text-paper">Tang Heritage Trail</h3>
+            <p class="text-xs text-paper/70 font-mono mt-1">Xi'an &rarr; Taiyuan &rarr; Xinzhou &rarr; Dunhuang</p>
+          </div>
+          <span class="flex-shrink-0 inline-flex items-center px-3 py-1 rounded-full bg-paper/90 text-vermillion text-xs font-mono font-medium">8-10 days</span>
+        </div>
       </div>
-      <div class="mt-4 pt-4 border-t border-rule"><p class="text-xs text-stone"><strong>Best season:</strong> April-May, September-October. Avoid July-August and Chinese New Year.</p><p class="text-xs text-stone mt-1"><strong>Difficulty:</strong> Moderate-hard. Mountain roads, remote locations, limited English.</p><p class="text-xs text-stone mt-1"><strong>Budget:</strong> ~8,000-12,000 CNY/person (excluding international flights).</p></div>
+      <ol class="px-6 md:px-7 py-6">
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-vermillion font-medium uppercase leading-5">Days 1-3</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-vermillion"></span>
+            <p class="font-medium text-ink">Xi'an</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Big Wild Goose Pagoda, Daming Palace, Shaanxi History Museum. Stay near Bell Tower. Book Shaanxi Museum 3+ days ahead on WeChat.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-vermillion font-medium uppercase leading-5">Day 3</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-vermillion"></span>
+            <p class="font-medium text-ink">Baoji day trip (from Xi'an)</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Famen Temple Museum. 2 hrs by car or 1.5 hrs HSR + taxi. Return to Xi'an.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-vermillion font-medium uppercase leading-5">Day 4</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-vermillion"></span>
+            <p class="font-medium text-ink">Taiyuan</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">HSR Xi'an-Taiyuan (3.5 hrs). Afternoon: Jinci Temple. Stay in Taiyuan.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-vermillion font-medium uppercase leading-5">Days 5-6</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-vermillion"></span>
+            <p class="font-medium text-ink">Xinzhou mountain temples</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Hire car+driver from Taiyuan (~600-800 CNY/day). 4 hr mountain road. Visit Foguang East Hall + Nanchan Temple in one day. Overnight in Doucun (basic guesthouse) or return to Taiyuan. No public transit.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-vermillion font-medium uppercase leading-5">Days 7-9</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-vermillion"></span>
+            <p class="font-medium text-ink">Dunhuang</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Fly Taiyuan-Dunhuang or train via Lanzhou. Mogao Caves: book Standard Visit (8 caves, 238 CNY) 2+ weeks ahead on WeChat mini-program. Stay in Dunhuang city.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-vermillion font-medium uppercase leading-5">Day 10</span>
+          <div class="flex-1 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-vermillion"></span>
+            <p class="font-medium text-ink">Depart</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Fly out from Dunhuang (DNH) or return to Xi'an.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="px-6 md:px-7 py-4 border-t border-rule bg-stone/[0.03] grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div><p class="text-[11px] font-mono uppercase text-stone/70">Best season</p><p class="text-xs text-ink mt-0.5">April-May, September-October. Avoid July-August and Chinese New Year.</p></div>
+        <div><p class="text-[11px] font-mono uppercase text-stone/70">Difficulty</p><p class="text-xs text-ink mt-0.5">Moderate-hard. Mountain roads, remote locations, limited English.</p></div>
+        <div><p class="text-[11px] font-mono uppercase text-stone/70">Budget</p><p class="text-xs text-ink mt-0.5">~8,000-12,000 CNY/person (excluding international flights).</p></div>
+      </div>
     </div>
-    <div class="border border-rule rounded p-5 md:p-6 bg-surface">
-      <h3 class="display text-2xl mb-1">Song Heritage Trail</h3>
-      <p class="text-xs text-stone font-mono mb-4">10-14 days &middot; Kaifeng &rarr; Zhengding &rarr; Taiyuan &rarr; Suzhou &rarr; Hangzhou &rarr; Ningbo</p>
-      <div class="space-y-3 text-sm">
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Day 1: Arrive Zhengzhou, transfer to Kaifeng</p><p class="text-stone">Fly into Zhengzhou (CGO). 40 min HSR to Kaifeng. Afternoon: Iron Pagoda. Stay in Kaifeng.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Day 2: Kaifeng</p><p class="text-stone">Qingming Riverside Garden (theme park, family-friendly). Note: Song Kaifeng is buried 8m under silt. Only the Iron Pagoda (1049) is original.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Days 3-4: Zhengding and Taiyuan</p><p class="text-stone">HSR to Shijiazhuang (2 hrs), taxi to Zhengding (30 min). Longxing Temple. Next day: HSR to Taiyuan (1.5 hrs). Jinci Temple. Stay in Taiyuan.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Days 5-6: Suzhou</p><p class="text-stone">Fly or HSR Taiyuan-Shanghai, train to Suzhou (30 min). Tiger Hill Pagoda, Suzhou Museum. Stay in Suzhou old town.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Days 7-9: Hangzhou</p><p class="text-stone">HSR Suzhou-Hangzhou (1 hr). Liuhe Pagoda, Southern Song Official Kiln Museum, West Lake. Stay near West Lake.</p></div>
-        <div class="border-l-2 border-vermillion pl-3"><p class="font-medium text-ink">Days 10-11: Ningbo</p><p class="text-stone">HSR Hangzhou-Ningbo (1 hr). Baoguo Temple Main Hall (1013). Fly out from Ningbo (NGB) or Shanghai (PVG).</p></div>
+    <div class="border border-rule rounded overflow-hidden bg-surface">
+      <div class="relative h-44 md:h-52">
+        <img src="images/qingmingheyuan.webp" alt="Qingming Riverside Garden in Kaifeng, a Song dynasty heritage theme park on the ancient riverfront" width="1200" height="800" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/5"></div>
+        <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 flex items-end justify-between gap-3">
+          <div>
+            <h3 class="display text-2xl text-paper">Song Heritage Trail</h3>
+            <p class="text-xs text-paper/70 font-mono mt-1">Kaifeng &rarr; Zhengding &rarr; Taiyuan &rarr; Suzhou &rarr; Hangzhou &rarr; Ningbo</p>
+          </div>
+          <span class="flex-shrink-0 inline-flex items-center px-3 py-1 rounded-full bg-paper/90 text-gold text-xs font-mono font-medium">10-14 days</span>
+        </div>
       </div>
-      <div class="mt-4 pt-4 border-t border-rule"><p class="text-xs text-stone"><strong>Best season:</strong> March-May, October-November. Jiangnan is beautiful in spring. Avoid summer humidity.</p><p class="text-xs text-stone mt-1"><strong>Difficulty:</strong> Easy-moderate. All Jiangnan sites accessible by public transit.</p><p class="text-xs text-stone mt-1"><strong>Budget:</strong> ~10,000-15,000 CNY/person (excluding international flights).</p></div>
+      <ol class="px-6 md:px-7 py-6">
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-gold font-medium uppercase leading-5">Day 1</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <p class="font-medium text-ink">Arrive Zhengzhou, transfer to Kaifeng</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Fly into Zhengzhou (CGO). 40 min HSR to Kaifeng. Afternoon: Iron Pagoda. Stay in Kaifeng.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-gold font-medium uppercase leading-5">Day 2</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <p class="font-medium text-ink">Kaifeng</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Qingming Riverside Garden (theme park, family-friendly). Note: Song Kaifeng is buried 8m under silt. Only the Iron Pagoda (1049) is original.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-gold font-medium uppercase leading-5">Days 3-4</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <p class="font-medium text-ink">Zhengding &amp; Taiyuan</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">HSR to Shijiazhuang (2 hrs), taxi to Zhengding (30 min). Longxing Temple. Next day: HSR to Taiyuan (1.5 hrs). Jinci Temple. Stay in Taiyuan.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-gold font-medium uppercase leading-5">Days 5-6</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <p class="font-medium text-ink">Suzhou</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">Fly or HSR Taiyuan-Shanghai, train to Suzhou (30 min). Tiger Hill Pagoda, Suzhou Museum. Stay in Suzhou old town.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-gold font-medium uppercase leading-5">Days 7-9</span>
+          <div class="flex-1 pb-6 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <p class="font-medium text-ink">Hangzhou</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">HSR Suzhou-Hangzhou (1 hr). Liuhe Pagoda, Southern Song Official Kiln Museum, West Lake. Stay near West Lake.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="w-24 flex-shrink-0 pt-0.5 text-[11px] font-mono text-gold font-medium uppercase leading-5">Days 10-11</span>
+          <div class="flex-1 border-l border-rule pl-5 relative">
+            <span class="absolute -left-[4px] top-1.5 w-1.5 h-1.5 rounded-full bg-gold"></span>
+            <p class="font-medium text-ink">Ningbo</p>
+            <p class="text-sm text-stone leading-relaxed mt-1">HSR Hangzhou-Ningbo (1 hr). Baoguo Temple Main Hall (1013). Fly out from Ningbo (NGB) or Shanghai (PVG).</p>
+          </div>
+        </li>
+      </ol>
+      <div class="px-6 md:px-7 py-4 border-t border-rule bg-stone/[0.03] grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div><p class="text-[11px] font-mono uppercase text-stone/70">Best season</p><p class="text-xs text-ink mt-0.5">March-May, October-November. Jiangnan is beautiful in spring. Avoid summer humidity.</p></div>
+        <div><p class="text-[11px] font-mono uppercase text-stone/70">Difficulty</p><p class="text-xs text-ink mt-0.5">Easy-moderate. All Jiangnan sites accessible by public transit.</p></div>
+        <div><p class="text-[11px] font-mono uppercase text-stone/70">Budget</p><p class="text-xs text-ink mt-0.5">~10,000-15,000 CNY/person (excluding international flights).</p></div>
+      </div>
     </div>
   </div>
 </section>

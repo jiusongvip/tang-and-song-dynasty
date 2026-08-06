@@ -2,10 +2,13 @@
   "name": "tang-and-song-dynasty",
   "private": true,
   "scripts": {
-    "build": "python build.py",
-    "dev": "pnpm build && serve . --no-clipboard"
+    "build": "python build.py && python gen2.py",
+    "build:css": "tailwindcss -i ./src/input.css -c ./tailwind.config.js -o ./dist/tailwind.css --minify",
+    "dev": "pnpm build:css && pnpm build && serve . --no-clipboard"
   },
   "devDependencies": {
-    "browser-sync": "^3.0.0"
+    "browser-sync": "^3.0.0",
+    "serve": "^14.2.6",
+    "tailwindcss": "^3.4.19"
   }
 }

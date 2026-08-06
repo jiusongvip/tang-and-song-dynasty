@@ -13,8 +13,8 @@ exec(code[:code.find("\ndef tag_badge")], ns)
 SITES = ns["SITES"]; TAG_DATA = ns["TAG_DATA"]; FLAG = ns["FLAG"]
 FLAG_EMOJI = {"CN":"&#x1f1e8;&#x1f1f3;","JP":"&#x1f1ef;&#x1f1f5;"}
 DYN = {"tang":"Tang Dynasty","song":"Song Dynasty"}
-GFONTS = "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"
-CSS = "html{scroll-behavior:smooth;scroll-padding-top:80px}h1,h2,h3,h4,.display{font-family:DM Serif Display,Georgia,serif}body{font-family:IBM Plex Sans,system-ui,sans-serif}.tag-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px}.tag-green{background:#166534}.tag-yellow{background:#ca8a04}.tag-orange{background:#ea580c}.tag-red{background:#dc2626}.nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#b91c1c;transition:width .2s}.nav-link:hover::after{width:100%}"
+GFONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;family=Noto+Serif+SC:wght@500;700&amp;family=Noto+Sans+SC:wght@300;400;500&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"
+CSS = "html{scroll-behavior:smooth;scroll-padding-top:80px}h1,h2,h3,h4,.display{font-family:'Cormorant Garamond','Noto Serif SC',Georgia,serif}body{font-family:'IBM Plex Sans','Noto Sans SC',system-ui,sans-serif}.tag-dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px}.tag-green{background:#166534}.tag-yellow{background:#ca8a04}.tag-orange{background:#ea580c}.tag-red{background:#dc2626}.nav-link{position:relative}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#b91c1c;transition:width .2s}.nav-link:hover::after{width:100%}"
 
 for site in SITES:
     sid = site["id"]
@@ -28,7 +28,7 @@ for site in SITES:
     flag_e = FLAG_EMOJI.get(site.get("country",""),"")
     dynasty = DYN.get(site.get("dynasty","tang"),"Tang Dynasty")
     sec = site.get("section","tang")
-    sec_anchor = {"tang":"tang-sites","song":"song-sites","japan":"japan"}.get(sec,"tang-sites")
+    sec_anchor = {"tang":"tang-sites","song":"song-sites"}.get(sec,"tang-sites")
     url = f"https://tang-and-song-dynasty.com/sites/{sid}/"
     meta_desc = f"Complete travel guide to {site['name']} in {site['city']}, {site['province']} ({dynasty}, {site['year']}). {label}. How to get there, where to stay, what to eat, best season, practical tips for foreign travelers."
 
@@ -48,14 +48,17 @@ for site in SITES:
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{site['name']} — {dynasty} Travel Guide">
 <meta name="twitter:description" content="{meta_desc}">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={{{{theme:{{extend:{{colors:{{ink:'#1a1714',stone:'#57534e',paper:'#fafaf7',surface:'#ffffff',vermillion:'#b91c1c','accent-hover':'#991b1b',rule:'#e7e5e4','tag-green':'#166534','tag-green-bg':'#dcfce7','tag-yellow':'#92400e','tag-yellow-bg':'#fef3c7','tag-orange':'#9a3412','tag-orange-bg':'#ffedd5','tag-red':'#991b1b','tag-red-bg':'#fee2e2'}},fontFamily:{{display:['DM Serif Display','Georgia','serif'],body:['IBM Plex Sans','system-ui','sans-serif'],mono:['IBM Plex Mono','monospace']}}}}}}}}}}</script>
+<meta property="og:image" content="https://tang-and-song-dynasty.com/images/{sid}.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta name="twitter:image" content="https://tang-and-song-dynasty.com/images/{sid}.webp">
+<link rel="stylesheet" href="/dist/tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{GFONTS}" rel="stylesheet">
 <style>{CSS}</style>
-<script type="application/ld+json">{{{{"@context":"https://schema.org","@type":"TouristAttraction","name":"{site['name']}","description":"{meta_desc[:300]}","address":{{{{"@type":"PostalAddress","addressLocality":"{site['city']}","addressRegion":"{site['province']}","addressCountry":"{site.get('country','CN')}"}}}}}}}}</script>
-<script type="application/ld+json">{{{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{{{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://tang-and-song-dynasty.com/"}}}},{{{{"@type":"ListItem","position":2,"name":"{site['name']}","item":"{url}"}}}}]}}}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"TouristAttraction","name":"{site['name']}","description":"{meta_desc[:300]}","address":{{"@type":"PostalAddress","addressLocality":"{site['city']}","addressRegion":"{site['province']}","addressCountry":"{site.get('country','CN')}"}}}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://tang-and-song-dynasty.com/"}},{{"@type":"ListItem","position":2,"name":"{site['name']}","item":"{url}"}}]}}</script>
 </head>
 <body class="bg-paper text-ink antialiased">
 <header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-rule">
@@ -65,7 +68,6 @@ for site in SITES:
       <a href="/" class="nav-link hover:text-ink transition-colors">Home</a>
       <a href="/#tang-sites" class="nav-link hover:text-ink transition-colors">Tang Sites</a>
       <a href="/#song-sites" class="nav-link hover:text-ink transition-colors">Song Sites</a>
-      <a href="/#japan" class="nav-link hover:text-ink transition-colors">Japan</a>
       <a href="/#routes" class="nav-link hover:text-ink transition-colors">Routes</a>
     </nav>
   </div>
