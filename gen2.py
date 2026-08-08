@@ -52,7 +52,7 @@ for site in SITES:
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
 <meta name="twitter:image" content="https://tang-and-song-dynasty.com/images/{sid}.webp">
-<link rel="stylesheet" href="/dist/tailwind.css">
+<link rel="stylesheet" href="/tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{GFONTS}" rel="stylesheet">
