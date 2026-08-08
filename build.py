@@ -122,7 +122,7 @@ head = (
     '<meta property="og:image:width" content="1200">\n'
     '<meta property="og:image:height" content="800">\n'
     '<meta name="twitter:image" content="https://tang-and-song-dynasty.com/images/hero.webp">\n'
-    '<link rel="stylesheet" href="/dist/tailwind.css">\n'
+    '<link rel="stylesheet" href="/tailwind.css">\n'
     '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
     '<link href="' + GFONTS + '" rel="stylesheet">\n'
