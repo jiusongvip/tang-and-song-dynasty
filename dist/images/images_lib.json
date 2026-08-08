@@ -1,0 +1,44 @@
+{
+  "foguang": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "nanchan": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "dayanta": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "mogao": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "famen": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "daming": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "datangbuye": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "baoguo": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "huqiu": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "kaifengtieta": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "jinci": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "longxing": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "qingmingheyuan": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  },
+  "hero": {
+    "error": "URLError(TimeoutError('_ssl.c:993: The handshake operation timed out'))"
+  }
+}

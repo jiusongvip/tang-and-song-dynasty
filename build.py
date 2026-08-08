@@ -258,6 +258,22 @@ full += open("sections/newsletter.html", encoding="utf-8").read()
 full += open("sections/faq_header.html", encoding="utf-8").read().replace("__FAQ_ITEMS__", faq_items)
 full += "\n" + footer + "\n" + reveal_js + "\n</body>\n</html>\n"
 
-with open("index.html", "w", encoding="utf-8") as f:
+import shutil
+
+# 输出到 dist/ 目录（Cloudflare Pages 部署目录）
+import os
+DIST = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dist")
+os.makedirs(DIST, exist_ok=True)
+
+with open(os.path.join(DIST, "index.html"), "w", encoding="utf-8") as f:
     f.write(full)
-print(f"index.html written: {len(full):,} bytes")
+
+# 复制静态文件与目录
+for item in ["404.html", "robots.txt", "sitemap.xml", "images", "sites"]:
+    src = os.path.join(os.path.dirname(os.path.abspath(__file__)), item)
+    dst = os.path.join(DIST, item)
+    if os.path.isdir(src):
+        shutil.copytree(src, dst, dirs_exist_ok=True)
+    elif os.path.isfile(src):
+        shutil.copy2(src, dst)
+print(f"dist/index.html written: {len(full):,} bytes")
