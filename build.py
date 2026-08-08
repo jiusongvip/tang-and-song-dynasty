@@ -269,7 +269,7 @@ with open(os.path.join(DIST, "index.html"), "w", encoding="utf-8") as f:
     f.write(full)
 
 # 复制静态文件与目录
-for item in ["404.html", "robots.txt", "sitemap.xml", "images", "sites"]:
+for item in ["404.html", "robots.txt", "sitemap-index.xml", "sitemap-0.xml", "images", "sites"]:
     src = os.path.join(os.path.dirname(os.path.abspath(__file__)), item)
     dst = os.path.join(DIST, item)
     if os.path.isdir(src):
