@@ -35,6 +35,12 @@ for site in SITES:
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZGSK745YV"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('js',new Date());gtag('config','G-YZGSK745YV');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{site['name']}, {site['city']} ({site['year']}) | {dynasty} Travel Guide — Tang &amp; Song Dynasty Ruins</title>

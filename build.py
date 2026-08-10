@@ -106,7 +106,14 @@ tas = json.dumps({"@context":"https://schema.org","@type":"ItemList","itemListEl
 bc = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://tang-and-song-dynasty.com/"}]}'
 
 head = (
-    '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n'
+    '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
+    '<!-- Google tag (gtag.js) -->\n'
+    '<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZGSK745YV"></script>\n'
+    '<script>\n'
+    'window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}\n'
+    "gtag('js',new Date());gtag('config','G-YZGSK745YV');\n"
+    '</script>\n'
+    '<meta charset="UTF-8">\n'
     '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
     '<title>Tang vs Song Dynasty: What Survives Today</title>\n'
     '<meta name="description" content="Compare Tang and Song dynasties: what you can still see today. An honest guide to surviving architecture with authenticity labels on every site.">\n'
