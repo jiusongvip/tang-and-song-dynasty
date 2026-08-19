@@ -64,7 +64,7 @@ gtag('js',new Date());gtag('config','G-YZGSK745YV');
 <link href="{GFONTS}" rel="stylesheet">
 <style>{CSS}</style>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"TouristAttraction","name":"{site['name']}","description":"{meta_desc[:300]}","address":{{"@type":"PostalAddress","addressLocality":"{site['city']}","addressRegion":"{site['province']}","addressCountry":"{site.get('country','CN')}"}}}}</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://www.tang-and-song-dynasty.com/"}},{{"@type":"ListItem","position":2,"name":"{site['name']}","item":"{url}"}}]}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://www.tang-and-song-dynasty.com"}},{{"@type":"ListItem","position":2,"name":"{site['name']}","item":"{url}"}}]}}</script>
 </head>
 <body class="bg-paper text-ink antialiased">
 <header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-rule">
