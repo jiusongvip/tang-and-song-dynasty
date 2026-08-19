@@ -63,7 +63,7 @@ function shareCard() {
   ctx.fillText('Basis: ' + r.basis, 30, y + 32);
   ctx.fillStyle = '#d6d3d1'; ctx.fillRect(0, h-32, w, 1);
   ctx.font = '11px monospace'; ctx.fillStyle = '#78716c';
-  ctx.fillText('Relics Guide \u00b7 tang-and-song-dynasty.com', 30, h-11);
+  ctx.fillText('Relics Guide \u00b7 www.tang-and-song-dynasty.com', 30, h-11);
   var link = document.createElement('a');
   link.download = r.name.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() + '-authenticity.png';
   link.href = canvas.toDataURL('image/png');

@@ -29,7 +29,7 @@ for site in SITES:
     dynasty = DYN.get(site.get("dynasty","tang"),"Tang Dynasty")
     sec = site.get("section","tang")
     sec_anchor = {"tang":"tang-sites","song":"song-sites"}.get(sec,"tang-sites")
-    url = f"https://tang-and-song-dynasty.com/sites/{sid}/"
+    url = f"https://www.tang-and-song-dynasty.com/sites/{sid}/"
     meta_desc = f"Complete travel guide to {site['name']} in {site['city']}, {site['province']} ({dynasty}, {site['year']}). {label}. How to get there, where to stay, what to eat, best season, practical tips for foreign travelers."
 
     html = f"""<!DOCTYPE html>
@@ -54,17 +54,17 @@ gtag('js',new Date());gtag('config','G-YZGSK745YV');
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{site['name']} — {dynasty} Travel Guide">
 <meta name="twitter:description" content="{meta_desc}">
-<meta property="og:image" content="https://tang-and-song-dynasty.com/images/{sid}.webp">
+<meta property="og:image" content="https://www.tang-and-song-dynasty.com/images/{sid}.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
-<meta name="twitter:image" content="https://tang-and-song-dynasty.com/images/{sid}.webp">
+<meta name="twitter:image" content="https://www.tang-and-song-dynasty.com/images/{sid}.webp">
 <link rel="stylesheet" href="/tailwind.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{GFONTS}" rel="stylesheet">
 <style>{CSS}</style>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"TouristAttraction","name":"{site['name']}","description":"{meta_desc[:300]}","address":{{"@type":"PostalAddress","addressLocality":"{site['city']}","addressRegion":"{site['province']}","addressCountry":"{site.get('country','CN')}"}}}}</script>
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://tang-and-song-dynasty.com/"}},{{"@type":"ListItem","position":2,"name":"{site['name']}","item":"{url}"}}]}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://www.tang-and-song-dynasty.com/"}},{{"@type":"ListItem","position":2,"name":"{site['name']}","item":"{url}"}}]}}</script>
 </head>
 <body class="bg-paper text-ink antialiased">
 <header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-sm border-b border-rule">

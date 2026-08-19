@@ -103,7 +103,7 @@ art = json.dumps({"@context":"https://schema.org","@type":"Article","headline":"
 faqs_schema = json.dumps({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in FAQ]}, ensure_ascii=False)
 tbl = json.dumps({"@context":"https://schema.org","@type":"Table","about":"Tang vs Song Dynasty Comparison"})
 tas = json.dumps({"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"TouristAttraction","name":s["name"],"description":s["why"],"address":{"@type":"PostalAddress","addressLocality":s["city"],"addressRegion":s["province"],"addressCountry":s["country"]}} for s in SITES]}, ensure_ascii=False)
-bc = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://tang-and-song-dynasty.com/"}]}'
+bc = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tang and Song Dynasty Guide","item":"https://www.tang-and-song-dynasty.com/"}]}'
 
 head = (
     '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
@@ -118,17 +118,17 @@ head = (
     '<title>Tang vs Song Dynasty: What Survives Today</title>\n'
     '<meta name="description" content="Compare Tang and Song dynasties: what you can still see today. An honest guide to surviving architecture with authenticity labels on every site.">\n'
     '<meta name="robots" content="index, follow">\n'
-    '<link rel="canonical" href="https://tang-and-song-dynasty.com/">\n'
+    '<link rel="canonical" href="https://www.tang-and-song-dynasty.com/">\n'
     '<meta property="og:title" content="Tang vs Song Dynasty: What Survives Today - Real Ruins Guide">\n'
     '<meta property="og:description" content="Compare Tang and Song dynasties: what they achieved, how they fell, and what you can still visit today.">\n'
     '<meta property="og:type" content="website">\n'
     '<meta name="twitter:card" content="summary_large_image">\n'
     '<meta name="twitter:title" content="Tang vs Song Dynasty: What Survives Today">\n'
     '<meta name="twitter:description" content="Honest labels on every site. What really survives from Tang and Song China — and how to travel to it.">\n'
-    '<meta property="og:image" content="https://tang-and-song-dynasty.com/images/hero.webp">\n'
+    '<meta property="og:image" content="https://www.tang-and-song-dynasty.com/images/hero.webp">\n'
     '<meta property="og:image:width" content="1200">\n'
     '<meta property="og:image:height" content="800">\n'
-    '<meta name="twitter:image" content="https://tang-and-song-dynasty.com/images/hero.webp">\n'
+    '<meta name="twitter:image" content="https://www.tang-and-song-dynasty.com/images/hero.webp">\n'
     '<link rel="stylesheet" href="/tailwind.css">\n'
     '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
     '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
