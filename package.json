@@ -2,7 +2,7 @@
   "name": "tang-and-song-dynasty",
   "private": true,
   "scripts": {
-    "build": "python build.py && python gen2.py",
+    "build": "python gen2.py && python build.py",
     "build:css": "tailwindcss -i ./src/input.css -c ./tailwind.config.js -o ./dist/tailwind.css --minify",
     "dev": "pnpm build:css && pnpm build && serve . --no-clipboard"
   },

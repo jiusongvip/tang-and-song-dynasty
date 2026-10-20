@@ -35,13 +35,13 @@ def site_card(s):
 <div class="p-5 md:p-6">
 <div class="flex items-start justify-between gap-3 mb-3"><div>{tag_badge(s["tag"])}</div><span class="text-xs text-stone font-mono">{flg}</span></div>
 <h3 class="display text-xl mb-1">{s["name"]}</h3>
-<p class="text-sm text-stone mb-3">{s["zh"]} &middot; {s["pinyin"]}</p>
+<p class="text-sm text-stone mb-3">{s["pinyin"]}</p>
 <div class="flex flex-wrap gap-4 text-sm text-ink mb-4"><span><strong>Built:</strong> {s["year"]}</span><span><strong>Location:</strong> {s["city"]}, {s["province"]}</span></div>
 <p class="text-sm text-ink leading-relaxed mb-3"><strong>Why go:</strong> {s["why"]}</p>
 <div class="flex flex-wrap gap-4 text-sm text-ink mb-3"><span><strong>Admission:</strong> {s["admission"]}</span><span><strong>Time:</strong> {s["duration"]}</span></div>
 <p class="text-sm text-stone border-l-2 border-vermillion pl-3 italic">Honest note: {s["honest"]}</p>
 <p class="text-xs text-stone mt-3 font-mono">Basis: {s["basis"]}</p>
-<div class="mt-4 pt-3 border-t border-rule"><a href="sites/{s["id"]}/" class="inline-flex items-center gap-1 text-sm text-vermillion font-medium hover:text-accent-hover transition">View Details <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+<div class="mt-4 pt-3 border-t border-rule"><a href="/sites/{s["id"]}/" class="inline-flex items-center gap-1 text-sm text-vermillion font-medium hover:text-accent-hover transition">View Details <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
 </div></article>"""
 
 def gen_sites_section(sec_key, id_str, title, kicker):
@@ -118,7 +118,7 @@ head = (
     '<title>Tang vs Song Dynasty: What Survives Today</title>\n'
     '<meta name="description" content="Compare Tang and Song dynasties: what you can still see today. An honest guide to surviving architecture with authenticity labels on every site.">\n'
     '<meta name="robots" content="index, follow">\n'
-    '<link rel="canonical" href="https://www.tang-and-song-dynasty.com">\n'
+    '<link rel="canonical" href="https://www.tang-and-song-dynasty.com/">\n'
     '<meta property="og:title" content="Tang vs Song Dynasty: What Survives Today - Real Ruins Guide">\n'
     '<meta property="og:description" content="Compare Tang and Song dynasties: what they achieved, how they fell, and what you can still visit today.">\n'
     '<meta property="og:type" content="website">\n'
@@ -127,7 +127,7 @@ head = (
     '<meta name="twitter:description" content="Honest labels on every site. What really survives from Tang and Song China — and how to travel to it.">\n'
     '<meta property="og:image" content="https://www.tang-and-song-dynasty.com/images/hero.webp">\n'
     '<meta property="og:image:width" content="1200">\n'
-    '<meta property="og:image:height" content="800">\n'
+    '<meta property="og:image:height" content="900">\n'
     '<meta name="twitter:image" content="https://www.tang-and-song-dynasty.com/images/hero.webp">\n'
     '<link rel="stylesheet" href="/tailwind.css">\n'
     '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
@@ -226,7 +226,7 @@ footer = """<footer class="border-t border-rule py-14 px-4 max-w-7xl mx-auto">
     </p>
   </div>
   <div class="mt-8 pt-6 border-t border-rule flex flex-wrap items-center justify-between gap-3 text-xs text-stone/80">
-    <span>No trackers. No cookies. No ads &mdash; honest information about what survives.</span>
+    <span>No ads, no accounts, no email collection &mdash; traffic is counted only as anonymous aggregate page views.</span>
     <span class="font-mono uppercase tracking-[.2em] text-gold">唐 宋 &middot; 遗 存 &middot; 真</span>
   </div>
   <div class="mt-4 text-[11px] leading-relaxed text-stone/60 max-w-3xl">

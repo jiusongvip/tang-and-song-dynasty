@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "D:/workspace/website/tang-and-song-dynasty/index.html",
-    "D:/workspace/website/tang-and-song-dynasty/sections/**/*.html",
-    "D:/workspace/website/tang-and-song-dynasty/sites/**/*.html",
-    "D:/workspace/website/tang-and-song-dynasty/build.py",
-    "D:/workspace/website/tang-and-song-dynasty/gen.py",
-    "D:/workspace/website/tang-and-song-dynasty/gen2.py",
+    "index.html",
+    "sections/**/*.html",
+    "sites/**/*.html",
+    "build.py",
+    "gen.py",
+    "gen2.py",
   ],
   theme: {
     extend: {
