@@ -68,7 +68,8 @@ def site_card(s):
     h += tag_badge(s["tag"]) + '</div>'
     h += '<span class="text-xs text-stone font-mono">{0}</span></div>'.format(FLAG.get(s.get("country",""),""))
     h += '<h3 class="display text-xl mb-1">{0}</h3>'.format(s["name"])
-    h += '<p class="text-sm text-stone mb-3">{0} &middot; {1}</p>'.format(s["zh"], s["pinyin"])
+    name_line = s["zh"] if s["zh"] == s["pinyin"] else '{0} &middot; {1}'.format(s["zh"], s["pinyin"])
+    h += '<p class="text-sm text-stone mb-3">{0}</p>'.format(name_line)
     h += '<div class="flex flex-wrap gap-4 text-sm text-ink mb-4"><span><strong>Built:</strong> {0}</span><span><strong>Location:</strong> {1}, {2}</span></div>'.format(s["year"], s["city"], s["province"])
     h += '<p class="text-sm text-ink leading-relaxed mb-3"><strong>Why go:</strong> {0}</p>'.format(s["why"])
     h += '<div class="flex flex-wrap gap-4 text-sm text-ink mb-3"><span><strong>Admission:</strong> {0}</span><span><strong>Time:</strong> {1}</span></div>'.format(s["admission"], s["duration"])
